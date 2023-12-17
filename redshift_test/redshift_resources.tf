@@ -10,6 +10,9 @@
 # egress_rules: ["all-all"]
 # Specifies the egress (outgoing) rules. Here, ["all-all"] means that the security group allows all outgoing traffic to any destination. This is a broad rule and is commonly used unless you have
 # specific requirements to restrict outbound traffic from your Redshift cluster.
+
+# From and To Port: The from_port and to_port are set to 0, and the protocol is -1. This combination effectively allows all types of traffic (all ports and protocols) to enter.
+# CIDR Blocks: The source for this traffic is set to 0.0.0.0/0, which means it allows traffic from any IP address on the internet. This is very permissive and not typically recommended, especially for sensitive resources like databases.
 ###########################
 
 resource "aws_security_group" "jwan_security_group" {
