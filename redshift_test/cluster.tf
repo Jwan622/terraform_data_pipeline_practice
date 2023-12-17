@@ -8,5 +8,5 @@ resource "aws_redshift_cluster" "jwan_cluster" {
   skip_final_snapshot     = true
 
   cluster_subnet_group_name = var.subnet_group_name
-  vpc_security_group_ids    = [var.vpc_id]
+  vpc_security_group_ids = [aws_security_group.jwan_security_group.id]
 }

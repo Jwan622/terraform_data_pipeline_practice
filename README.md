@@ -20,6 +20,7 @@ terraform plan -out s3_plan
 terraform init
 ```
 
+
 You'll see output like this:
 ```bash
 Initializing the backend...
@@ -31,6 +32,15 @@ Downloading registry.terraform.io/terraform-aws-modules/security-group/aws 4.17.
 Downloading registry.terraform.io/terraform-aws-modules/vpc/aws 3.19.0 for vpc...
 - vpc in .terraform/modules/vpc
 ```
+
+
+3. To Apply:
+```bash
+terraform apply
+```
+
+and then you'll see output and new files like `terraform.tfstate` and `terraform.tfstate.lock.info`
+
 
 # Notes
 I took some notes on the whole thing including understanding the various AWS services. The notes are here:
